@@ -1,7 +1,7 @@
 [package]
 name = "thatcord"
-version = "0.1.0"
-description = "A Discord Client made with Tauri"
+version = "0.2.0"
+description = "ThatCord is a minimalized discord client that uses Tauri instead of Electron."
 authors = ["Ztrolix"]
 license = ""
 repository = ""
