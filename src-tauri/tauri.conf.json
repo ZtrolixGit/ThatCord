@@ -1,0 +1,67 @@
+{
+    "build": {
+        "beforeDevCommand": "",
+        "beforeBuildCommand": "",
+        "devPath": "https://canary.discord.com/app",
+        "distDir": "https://canary.discord.com/app",
+        "withGlobalTauri": true
+    },
+    "package": {
+        "productName": "ThatCord",
+        "version": "0.1.0"
+    },
+    "tauri": {
+        "allowlist": {
+            "all": false,
+            "shell": {
+                "all": false,
+                "execute": false,
+                "open": true,
+                "scope": [],
+                "sidecar": false
+            },
+            "path": {
+                "all": true
+            },
+            "notification": {
+                "all": true
+            }
+        },
+        "bundle": {
+            "active": true,
+            "targets": "all",
+            "identifier": "com.thatcord.dev",
+            "icon": [
+                "icons/500x500.png",
+                "icons/icon.ico"
+            ]
+        },
+        "security": {
+            "dangerousRemoteDomainIpcAccess": [{
+                    "enableTauriAPI": true,
+                    "domain": "discord.com",
+                    "windows": ["main"]
+                },
+                {
+                    "enableTauriAPI": true,
+                    "domain": "ptb.discord.com",
+                    "windows": ["main"]
+                },
+                {
+                    "enableTauriAPI": true,
+                    "domain": "canary.discord.com",
+                    "windows": ["main"]
+                }
+            ],
+            "csp": null
+        },
+        "windows": [{
+            "fullscreen": false,
+            "resizable": true,
+            "title": "ThatCord - V0.1.0",
+            "url": "https://canary.discord.com/app",
+            "width": 800,
+            "height": 600
+        }]
+    }
+}

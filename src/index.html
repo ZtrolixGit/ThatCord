@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tauri App</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 hidden id="loading">Loading...</h1>
+        <h1 hidden id="dn2">Error: Discord did not Connect (ER::DN2)</h1>
+    </div>
+
+    <script>
+        var websiteUrl = 'https://discord.com/app';
+        var dn2 = document.getElementById("dn2");
+        var loading = document.getElementById("loading");
+
+        dn2.style.display = 'none';
+        loading.style.display = 'block';
+
+        var iframe = document.createElement('iframe');
+        iframe.src = websiteUrl;
+        iframe.style.width = '100%';
+        iframe.style.height = '600px';
+        iframe.style.border = 'none';
+
+        document.body.appendChild(iframe);
+
+        // Check if the website is accessible
+        function isWebsiteAccessible(url, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    // Status code 200 indicates a successful connection
+                    callback(xhr.status === 200);
+                }
+            };
+            xhr.open('GET', url, true);
+            xhr.send();
+        }
+
+        // Hide the iframe if the website is not accessible
+        isWebsiteAccessible(websiteUrl, function(isAccessible) {
+            if (isAccessible) {
+                document.body.appendChild(iframe);
+                dn2.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+
+</html>
