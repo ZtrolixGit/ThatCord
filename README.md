@@ -7,6 +7,7 @@
 <h3 align="center">ThatCord is a minimalized discord client that uses Tauri instead of Electron.</h3>
 <h2></h2>
 
-[<kbd> <br> Download <br> </kbd>][KBD]
+[<kbd> <br>    Download V0.2.0    <br> </kbd>][DWLD] [<kbd> <br>    Website    <br> </kbd>][WEB]
 
-[KBD]: https://github.com/ZtrolixGit/ThatCord/releases/tag/0.2.0
+[DWLD]: https://github.com/ZtrolixGit/ThatCord/releases/tag/0.2.0
+[WEB]: https://ztrolixgit.github.io/ThatCord/
