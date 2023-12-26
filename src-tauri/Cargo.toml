@@ -1,6 +1,6 @@
 [package]
 name = "thatcord"
-version = "0.2.0"
+version = "0.3.0"
 description = "ThatCord is a minimalized discord client that uses Tauri instead of Electron."
 authors = ["Ztrolix"]
 license = ""
@@ -14,7 +14,7 @@ tauri-build = { version = "1.5", features = [] }
 serenity = "0.10"
 tokio = { version = "1", features = ["full"] }
 async-trait = "0.1.50"
-tauri = { version = "1.5", features = [ "shell-open", "path-all", "notification-all"] }
+tauri = { version = "1.5", features = [ "process-relaunch", "system-tray", "shell-open", "path-all", "notification-all"] }
 serde = { version = "1.0", features = ["derive"] }
 async-recursion = "1.0.4"
 include-flate = "0.3.0"

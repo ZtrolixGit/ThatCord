@@ -8,7 +8,7 @@
     },
     "package": {
         "productName": "ThatCord",
-        "version": "0.2.0"
+        "version": "0.3.0"
     },
     "tauri": {
         "allowlist": {
@@ -25,6 +25,15 @@
             },
             "notification": {
                 "all": true
+            },
+            "os": {
+                "all": false
+            },
+            "process": {
+                "all": false,
+                "exit": false,
+                "relaunch": true,
+                "relaunchDangerousAllowSymlinkMacos": false
             }
         },
         "bundle": {
@@ -34,7 +43,27 @@
             "icon": [
                 "icons/500x500.png",
                 "icons/icon.ico"
-            ]
+            ],
+            "windows": {
+                "allowDowngrades": true,
+                "certificateThumbprint": null,
+                "digestAlgorithm": null,
+                "nsis": null,
+                "timestampUrl": null,
+                "tsp": false,
+                "webviewFixedRuntimePath": null,
+                "webviewInstallMode": {
+                    "silent": true,
+                    "type": "downloadBootstrapper"
+                },
+                "wix": null
+            },
+            "macOS": {
+                "minimumSystemVersion": "10.13"
+            },
+            "deb": {
+                "files": {}
+            }
         },
         "security": {
             "dangerousRemoteDomainIpcAccess": [{
@@ -55,13 +84,32 @@
             ],
             "csp": null
         },
+        "updater": {
+            "active": false,
+            "dialog": true,
+            "pubkey": "",
+            "windows": {
+                "installMode": "passive",
+                "installerArgs": []
+            }
+        },
         "windows": [{
             "fullscreen": false,
             "resizable": true,
-            "title": "ThatCord - V0.2.0",
+            "title": "ThatCord",
             "url": "https://canary.discord.com/app",
             "width": 800,
-            "height": 600
-        }]
+            "height": 600,
+            "decorations": false,
+            "minHeight": 300,
+            "minWidth": 400
+        }],
+        "pattern": {
+            "use": "brownfield"
+        },
+        "systemTray": {
+            "iconPath": "icons/500x500.png",
+            "iconAsTemplate": true
+        }
     }
 }
